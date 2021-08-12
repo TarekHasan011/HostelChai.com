@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/ad_posting_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/ad_posting_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Post advertisement</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix bg-dark">
+            <form class="form-group" action="{% url 'main_app:ad_posting' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Select a Hostel: </span>
+                    </div>
+                    <select class="custom-select" name="hostel" required>
+                        {% for hostel in hostels %}
+                            <option class="custom-select-option" value="{{ hostel }}">{{ hostel }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <p>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Total seats: </span>
+                            </div>
+                            <input class="form-control" type="number" name="total_seats">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Seats per room: </span>
+                            </div>
+                            <input class="form-control" type="number" name="per_room_seats">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rent per month: </span>
+                            </div>
+                            <input class="form-control" type="number" name="rent">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <label class="text-secondary" for="room_description">Room description:</label>
+                <textarea class="form-control" rows="2" id="room_description" name="room_description" placeholder="Write description of the rooms ..."></textarea>
+
+                <p>
+
+                <div class="row">
+                    <div class="col">
+                        <label class="text-secondary" for="meal_description">Meal description:</label>
+                        <textarea class="form-control" rows="2" id="meal_description" name="meal_description" placeholder="Write description of the meals ..."></textarea>
+                    </div>
+                    <div class="col">
+                        <label class="text-secondary" for="facility_description">Facility description:</label>
+                        <textarea class="form-control" rows="2" id="facility_description" name="facility_description" placeholder="Write description of the facilities ..."></textarea>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Preferred Institution:</span>
+                    </div>
+                    <select class="custom-select" name="preferred_institution">
+                        {% for ins_name in ins_names %}
+                            <option value="{{ ins_name }}">{{ ins_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <label class="text-secondary" for="rules">Rules:</label>
+                        <textarea class="form-control" rows="2" id="rules" name="rules" placeholder="Write rules ..."></textarea>
+                    </div>
+                    <div class="col">
+                        <label class="text-secondary" for="conditions">Conditions:</label>
+                        <textarea class="form-control" rows="2" id="conditions" name="conditions" placeholder="Write conditions ..."></textarea>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Photo 1(This one will be you thumbnail):</span>
+                    </div>
+
+                    <div class="custom-file">
+                        <input class="custom-file-input" id="room_photo_1" type="file" name="room_photo_1" required>
+                        <label class="custom-file-label bg_custom" for="room_photo_1">Choose file</label>
+                    </div>
+                </div>
+
+                <p>
+
+                <div class="row">
+
+                    <div class="col">
+                         <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Photo 2:</span>
+                            </div>
+
+                            <div class="custom-file">
+                                <input class="custom-file-input" id="room_photo_2" type="file" name="room_photo_2" required>
+                                <label class="custom-file-label bg_custom" for="room_photo_2">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                         <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Photo 3:</span>
+                            </div>
+
+                            <div class="custom-file">
+                                <input class="custom-file-input" id="room_photo_3" type="file" name="room_photo_3" required>
+                                <label class="custom-file-label bg_custom" for="room_photo_3">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <input class="btn btn-outline-success btn-block" type="submit" value="Post">
+
+            </form>
+        </div>
+    {% endblock %}

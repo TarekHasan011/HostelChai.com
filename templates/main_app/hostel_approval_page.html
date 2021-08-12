@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/hostel_approval_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/hostel_approval_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">{{ hostel_id }}</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix bg-dark">
+
+            <p>
+                <div class="row text-secondary">
+                    <div class="col-3">
+                        <h4><b>Hostel Owner</b></h4>
+                    </div>
+                    <div class="col">
+                        <h4><b>:</b> {{ hostel_owner_name }}</h4>
+                    </div>
+                </div>
+                <div class="row text-secondary">
+                    <div class="col-3">
+                        <h4><b>Phone number</b></h4>
+                    </div>
+                    <div class="col">
+                        <h4><b>:</b> {{ phone_number }}</h4>
+                    </div>
+                </div>
+
+                <div class="row text-secondary">
+                    <div class="col-3">
+                        <h4><b>Hostel Name</b></h4>
+                    </div>
+                    <div class="col">
+                        <h4><b>:</b> {{ hostel_name }}</h4>
+                    </div>
+                </div>
+
+                <div class="row text-secondary">
+                    <div class="col-3">
+                        <h4><b>Address</b></h4>
+                    </div>
+                    <div class="col">
+                        <h4><b>:</b> {{ hostel_house_number }}, {{ hostel_road_number }}, {{ hostel_thana }}, Dhaka-{{ hostel_postal_code }}.</h4>
+                    </div>
+                </div>
+            </p>
+
+            <p>
+                <h4 class="text-center text-secondary"><b>**DOCUMENTS**</b></h4>
+            </p>
+
+            <p>
+                <div class="accordion" id="accordionExample">
+                    <div class="card bg-secondary">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="text-dark"><b>Hostel Image:</b></span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <img class="card-img" src="{{ MEDIA_URL }}{{ hostel_photo }}" alt="Not found !!!">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-secondary">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="text-dark"><b>Electricity Bill:</b></span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <img class="card-img" src="{{ MEDIA_URL }}{{ hostel_electricity_bill }}" alt="Not found !!!">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-secondary">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="text-dark"><b>Other valid document:</b></span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ MEDIA_URL }}{{ hostel_document }}" alt="Not found !!!">
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <form class="form-group" action="{% url 'main_app:requests_loader_page' %}" method='post'>
+                        {% csrf_token %}
+                        <input class="btn btn-outline-secondary btn-block" type="submit" value="Check Another">
+                    </form>
+                </div>
+                <div class="col">
+                    <form class="form-group" action="{% url 'main_app:approve_hostel' %}" method='post'>
+                        {% csrf_token %}
+                        <input type="text" name="hostel_id" value="{{ hostel_id }}" hidden>
+                        <input class="btn btn-outline-success btn-block" type="submit" value="Approve">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

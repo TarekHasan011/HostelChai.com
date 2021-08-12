@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/500.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/500.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron bg-dark text-secondary">
+            <h1 class="text-center header align-middle">404 Not Found :(</h1>
+        </div>
+    {% endblock %}

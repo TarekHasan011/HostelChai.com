@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/ad_approval_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/ad_approval_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">{{ ads_id }}</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix bg-dark">
+            <h1 class="text-center text-secondary">Information will appear here.</h1>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-outline-secondary btn-block" href="{% url 'main_app:requests_loader_page' %}">Check Another</a>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-success btn-block" href="{% url 'main_app:approve_ad' ads_id=ads_id %}">Approve</a>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

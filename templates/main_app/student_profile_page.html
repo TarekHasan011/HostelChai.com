@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/student_profile_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/student_profile_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Profile</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix_unified bg-dark">
+
+            <h1 class="text-light text-center">**Other Profile Information**</h1>
+            <h1 class="text-light text-center">_____________________________________________</h1>
+
+            <br><br>
+
+            {% if hostel_found == 'true' %}
+                <div class="card mb-3 bg-secondary">
+                    <div class="card-header bg-dark text-secondary">
+                        <h3 class="text-center">Currently enrolled in:</h3>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-3">
+                            <img src="{{ MEDIA_URL }}{{ hostel_photo }}" class="card-img" height="170px" alt="...">
+                        </div>
+                        <div class="col-9">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <h4 class="card-title"><b>{{ hostel_name }}</b> <span class="badge badge-success">{{ hostel_rating }}</span></h4>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#hostel_rating_form">
+                                            Rate this hostel
+                                        </button>
+
+                                        <div class="modal fade" id="hostel_rating_form" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticBackdropLabel">Giving review & rating to <b>{{ hostel_name }}</b></h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form class="form-group" action="{% url 'main_app:process_hostel_review_and_rating' user_id=user_id hostel_id=hostel_id %}" method="post">
+                                                            {% csrf_token %}
+
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">
+                                                                        Rating:
+                                                                    </span>
+                                                                </div>
+
+                                                                <select class="custom-select" name="rate" id="rate">
+                                                                    <option value="10" selected>10</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="1">1</option>
+                                                                </select>
+
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">[ 10 is the best rating ]</span>
+                                                                </div>
+                                                            </div>
+
+                                                            <br>
+
+                                                            <label for="review">Write review:</label>
+                                                            <textarea class="form-control" name="review" id="review" rows="2"></textarea>
+
+                                                            <br>
+
+                                                            <div class="row">
+                                                                <div class="col-6"></div>
+                                                                <div class="col">
+                                                                    <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Cancel</button>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <h5>Location</h5>
+                                    </div>
+                                    <div class="col-7">
+                                        <h5>: {{ hostel_location }}</h5>
+                                    </div>
+                                    <div class="col">
+                                        <a class="btn btn-primary btn-block" href="#">View details</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <h5>Contact</h5>
+                                    </div>
+                                    <div class="col">
+                                        <h5>: {{ hostel_contact }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <h1 class="text-center">You're not enrolled in any hostel yet.</h1>
+            {% endif %}
+        </div>
+
+    {% endblock %}

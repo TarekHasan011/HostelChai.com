@@ -1,0 +1,473 @@
+<tr>
+<td><b>11</b></td>
+<td><a href="https://www.4icu.org/reviews/193.htm">Ahsanullah University of Science and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>7</b></td>
+<td><a href="https://www.4icu.org/reviews/7586.htm">American International University-Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>69</b></td>
+<td><a href="https://www.4icu.org/reviews/18005.htm">Anwer Khan Modern University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>30</b></td>
+<td><a href="https://www.4icu.org/reviews/10232.htm">ASA University Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>53</b></td>
+<td><a href="https://www.4icu.org/reviews/195.htm">Asian University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>58</b></td>
+<td><a href="https://www.4icu.org/reviews/7587.htm">Atish Dipankar University of Science and Technology</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>14</b></td>
+<td><a href="https://www.4icu.org/reviews/197.htm">Bangabandhu Sheikh Mujib Medical University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>26</b></td>
+<td><a href="https://www.4icu.org/reviews/196.htm">Bangabandhu Sheikh Mujibur Rahman Agricultural University</a></td>
+<td>Gazipur</td>
+</tr>
+
+<tr>
+<td><b>54</b></td>
+<td><a href="https://www.4icu.org/reviews/15213.htm">Bangabandhu Sheikh Mujibur Rahman Maritime University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>42</b></td>
+<td><a href="https://www.4icu.org/reviews/13949.htm">Bangabandhu Sheikh Mujibur Rahman Science and Technology University</a></td>
+<td>Gopalganj</td>
+</tr>
+
+<tr>
+<td><b>9</b></td>
+<td><a href="https://www.4icu.org/reviews/198.htm">Bangladesh Agricultural University</a></td>
+<td>Mymensingh</td>
+</tr>
+
+<tr>
+<td><b>55</b></td>
+<td><a href="https://www.4icu.org/reviews/10233.htm">Bangladesh Islami University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>60</b></td>
+<td><a href="https://www.4icu.org/reviews/10144.htm">Bangladesh University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>22</b></td>
+<td><a href="https://www.4icu.org/reviews/10234.htm">Bangladesh University of Business and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>1</b></td>
+<td><a href="https://www.4icu.org/reviews/202.htm">Bangladesh University of Engineering and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>70</b></td>
+<td><a href="https://www.4icu.org/reviews/18002.htm">Bangladesh University of Health Sciences </a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>15</b></td>
+<td><a href="https://www.4icu.org/reviews/12286.htm">Bangladesh University of Professionals</a></td>
+<td>Mirpur</td>
+</tr>
+
+<tr>
+<td><b>52</b></td>
+<td><a href="https://www.4icu.org/reviews/13948.htm">Bangladesh University of Textiles</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>37</b></td>
+<td><a href="https://www.4icu.org/reviews/18004.htm">BGMEA University of Fashion and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>3</b></td>
+<td><a href="https://www.4icu.org/reviews/203.htm">BRAC University</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>28</b></td>
+<td><a href="https://www.4icu.org/reviews/17998.htm">Canadian University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>76</b></td>
+<td><a href="https://www.4icu.org/reviews/18003.htm">Central University of Science and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>65</b></td>
+<td><a href="https://www.4icu.org/reviews/18006.htm">Central Women's University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>44</b></td>
+<td><a href="https://www.4icu.org/reviews/7592.htm">City University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>4</b></td>
+<td><a href="https://www.4icu.org/reviews/7594.htm">Daffodil International University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>29</b></td>
+<td><a href="https://www.4icu.org/reviews/7595.htm">Dhaka International University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>31</b></td>
+<td><a href="https://www.4icu.org/reviews/7852.htm">Dhaka University of Engineering and Technology</a></td>
+<td>Gazipur</td>
+</tr>
+
+<tr>
+<td><b>13</b></td>
+<td><a href="https://www.4icu.org/reviews/206.htm">East West University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>24</b></td>
+<td><a href="https://www.4icu.org/reviews/7597.htm">Eastern University, Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>43</b></td>
+<td><a href="https://www.4icu.org/reviews/15221.htm">European University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>67</b></td>
+<td><a href="https://www.4icu.org/reviews/17999.htm">Fareast International University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>51</b></td>
+<td><a href="https://www.4icu.org/reviews/208.htm">Gono Bishwabidyalay</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>21</b></td>
+<td><a href="https://www.4icu.org/reviews/7598.htm">Green University of Bangladesh</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>64</b></td>
+<td><a href="https://www.4icu.org/reviews/18010.htm">Hamdard University of Bangladesh</a></td>
+<td>Munshiganj</td>
+</tr>
+
+<tr>
+<td><b>66</b></td>
+<td><a href="https://www.4icu.org/reviews/209.htm">IBAIS University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>8</b></td>
+<td><a href="https://www.4icu.org/reviews/210.htm">Independent University, Bangladesh</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>78</b></td>
+<td><a href="https://www.4icu.org/reviews/18560.htm">International Standard University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>19</b></td>
+<td><a href="https://www.4icu.org/reviews/213.htm">International University of Business Agriculture and Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>72</b></td>
+<td><a href="https://www.4icu.org/reviews/18008.htm">Ishakha International University, Bangladesh</a></td>
+<td>Kishorganj</td>
+</tr>
+
+<tr>
+<td><b>56</b></td>
+<td><a href="https://www.4icu.org/reviews/17988.htm">Islamic Arabic University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>17</b></td>
+<td><a href="https://www.4icu.org/reviews/7601.htm">Islamic University of Technology</a></td>
+<td>Gazipur</td>
+</tr>
+
+<tr>
+<td><b>23</b></td>
+<td><a href="https://www.4icu.org/reviews/10142.htm">Jagannath University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>12</b></td>
+<td><a href="https://www.4icu.org/reviews/217.htm">Jahangirnagar University</a></td>
+<td>Savar</td>
+</tr>
+
+<tr>
+<td><b>33</b></td>
+<td><a href="https://www.4icu.org/reviews/10143.htm">Jatiya Kabi Kazi Nazrul Islam University</a></td>
+<td>Mymensingh</td>
+</tr>
+
+<tr>
+<td><b>39</b></td>
+<td><a href="https://www.4icu.org/reviews/219.htm">Manarat International University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>34</b></td>
+<td><a href="https://www.4icu.org/reviews/7605.htm">Mawlana Bhashani Science and Technology University</a></td>
+<td>Tangail</td>
+</tr>
+
+<tr>
+<td><b>73</b></td>
+<td><a href="https://www.4icu.org/reviews/18009.htm">N.P.I. University of Bangladesh</a></td>
+<td>Manikgonj</td>
+</tr>
+
+<tr>
+<td><b>6</b></td>
+<td><a href="https://www.4icu.org/reviews/7607.htm">National University, Bangladesh</a></td>
+<td>Gazipur</td>
+</tr>
+
+<tr>
+<td><b>5</b></td>
+<td><a href="https://www.4icu.org/reviews/221.htm">North South University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>25</b></td>
+<td><a href="https://www.4icu.org/reviews/7608.htm">Northern University of Bangladesh</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>61</b></td>
+<td><a href="https://www.4icu.org/reviews/15217.htm">Notre Dame University Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>41</b></td>
+<td><a href="https://www.4icu.org/reviews/7611.htm">Presidency University, Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>46</b></td>
+<td><a href="https://www.4icu.org/reviews/7613.htm">Prime University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>40</b></td>
+<td><a href="https://www.4icu.org/reviews/7612.htm">Primeasia University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>68</b></td>
+<td><a href="https://www.4icu.org/reviews/18000.htm">Queens University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>45</b></td>
+<td><a href="https://www.4icu.org/reviews/7616.htm">Royal University of Dhaka</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>50</b></td>
+<td><a href="https://www.4icu.org/reviews/7617.htm">Shanto Mariam University of Creative Technology</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>77</b></td>
+<td><a href="https://www.4icu.org/reviews/18016.htm">Sheikh Fazilatunnesa Mujib University</a></td>
+<td>Jamalpur</td>
+</tr>
+
+<tr>
+<td><b>38</b></td>
+<td><a href="https://www.4icu.org/reviews/7618.htm">Sher-e-Bangla Agricultural University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>49</b></td>
+<td><a href="https://www.4icu.org/reviews/15219.htm">Sonargaon University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>20</b></td>
+<td><a href="https://www.4icu.org/reviews/7619.htm">Southeast University, Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>32</b></td>
+<td><a href="https://www.4icu.org/reviews/7620.htm">Stamford University Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>35</b></td>
+<td><a href="https://www.4icu.org/reviews/7621.htm">State University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>75</b></td>
+<td><a href="https://www.4icu.org/reviews/18001.htm">The International University of Scholars</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>62</b></td>
+<td><a href="https://www.4icu.org/reviews/10236.htm">The Millenium University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>63</b></td>
+<td><a href="https://www.4icu.org/reviews/223.htm">The People's University of Bangladesh</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>74</b></td>
+<td><a href="https://www.4icu.org/reviews/18007.htm">Times University of Bangladesh</a></td>
+<td>Faridpur</td>
+</tr>
+
+<tr>
+<td><b>10</b></td>
+<td><a href="https://www.4icu.org/reviews/7624.htm">United International University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>18</b></td>
+<td><a href="https://www.4icu.org/reviews/228.htm">University of Asia Pacific</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>47</b></td>
+<td><a href="https://www.4icu.org/reviews/9213.htm">University of Development Alternative</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>2</b></td>
+<td><a href="https://www.4icu.org/reviews/230.htm">University of Dhaka</a></td>
+<td>Dhaka ...</td>
+</tr>
+
+<tr>
+<td><b>36</b></td>
+<td><a href="https://www.4icu.org/reviews/231.htm">University of Information Technology and Sciences</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>16</b></td>
+<td><a href="https://www.4icu.org/reviews/7626.htm">University of Liberal Arts Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>59</b></td>
+<td><a href="https://www.4icu.org/reviews/7627.htm">University of South Asia, Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>48</b></td>
+<td><a href="https://www.4icu.org/reviews/7628.htm">Uttara University</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>57</b></td>
+<td><a href="https://www.4icu.org/reviews/7629.htm">Victoria University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>27</b></td>
+<td><a href="https://www.4icu.org/reviews/233.htm">World University of Bangladesh</a></td>
+<td>Dhaka</td>
+</tr>
+
+<tr>
+<td><b>71</b></td>
+<td><a href="https://www.4icu.org/reviews/18013.htm">Z.H. Sikder University of Science and Technology </a></td>
+<td>Bhedorgonj</td>
+</tr>
+
+<tr>
+<td><b>79</b></td>
+<td><a href="https://www.4icu.org/reviews/18558.htm">ZNRF University of Management Sciences</a></td>
+<td>Dhaka</td>
+</tr>

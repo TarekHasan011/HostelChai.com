@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/css/ads_feed_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/ads_feed_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Posts</h1>
+            </div>
+        </div>
+
+        <form class="form-group" action="{% url 'main_app:ads_feed_page' page_number=0 location='null' institute='null' budget_from='null' budget_to='null' %}" method="post">
+
+            {% csrf_token %}
+
+            <div class="row">
+
+                {% if login_status == 'false' or user_type == 'H' %}
+                    <div class="col">
+                {% else %}
+                    <div class="col-3">
+                {% endif %}
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border border-info text-info"><b>Location:</b></span>
+                        </div>
+                        <select class="custom-select bg-transparent border border-info text-info" name="location" id="location">
+                            {% for thana in thanas %}
+                                <option class="text-info bg-dark" value="{{ thana.0 }}" {{ thana.1 }}>{{ thana.0 }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                {% if login_status == 'true' and user_type != 'H' %}
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-transparent border border-info text-info"><b>Institute:</b></span>
+                            </div>
+                            <select class="custom-select bg-transparent border border-info text-info" name="institute" id="institute">
+                                {% for institute in institutes %}
+                                    <option class="text-info bg-dark" value="{{ institute.0 }}" {{ institute.1 }}>{{ institute.0 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-transparent border border-info text-info"><b>Budget:</b></span>
+                            </div>
+                            <input class="form-control bg-transparent border border-info text-info" type="text" name="budget_from" value="{{ budget_from }}" placeholder="Min" required>
+                            <input class="form-control bg-transparent border border-info text-info" type="text" name="budget_to" value="{{ budget_to }}" placeholder="Max" required>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="col-1">
+                    <input class="btn btn-outline-info btn-block" type="submit" value="Apply">
+                </div>
+            </div>
+        </form>
+        <br>
+
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="btn btn-outline-info" href="{% url 'main_app:ads_feed_page' page_number=previous_page location=url_location institute=url_institute budget_from=url_budget_from budget_to=url_budget_to %}">Previous</a></li>
+
+                {% for page in pages %}
+                    <li class="page-item"><a class="btn btn-outline-info {{ page.1 }}" href="{% url 'main_app:ads_feed_page' page_number=page.0 location=url_location institute=url_institute budget_from=url_budget_from budget_to=url_budget_to %}">{{ page.0 }}</a></li>
+                {% endfor %}
+
+                <li class="page-item"><a class="btn btn-outline-info" href="{% url 'main_app:ads_feed_page' page_number=next_page location=url_location institute=url_institute budget_from=url_budget_from budget_to=url_budget_to %}">Next</a></li>
+            </ul>
+        </nav>
+
+        <br>
+
+        {% for ad_row in ads %}
+            <div class="row">
+                {% for ad in ad_row %}
+                    <div class="col-3">
+                        <div class="card bg-dark text-info">
+                            <img class="card-img-top" src="{{ MEDIA_URL }}{{ ad.0 }}_room_photo.png" height="200px"  alt="Image not found">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ ad.1 }}</h5>
+                                <p class="card-text">Rating: <span class="badge badge-success">{{ ad.2 }}</span></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary text-light">
+                                    <div class="row">
+                                        <div class="col">
+                                            Location
+                                        </div>
+                                        <div class="col">
+                                          :  {{ ad.3 }}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-secondary text-light">
+                                    <div class="row">
+                                        <div class="col">
+                                            Institution preference
+                                        </div>
+                                        <div class="col">
+                                            : {{ ad.4 }}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-secondary text-light">
+                                    <div class="row">
+                                        <div class="col">
+                                            Rent
+                                        </div>
+                                        <div class="col">
+                                            : {{ ad.5 }}/=
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="card-body">
+                                {% if login_status == 'true' %}
+                                    <a class="btn btn-outline-secondary btn-block" href="#">View details</a>
+                                {% else %}
+                                    <a class="btn btn-outline-secondary btn-block" href="{% url 'main_app:login_page' %}">View details</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+        {% endfor %}
+    {% endblock %}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/requests_loader_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/requests_loader_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Load Requests</h1>
+            </div>
+        </div>
+
+        <form class="form-group" action="{% url 'main_app:requests_loader' %}" method="post">
+            {% csrf_token %}
+
+            <div class="jumbotron jumbotron_suffix_unified bg-dark">
+                <div class="row">
+                    <div class="col-2">
+
+                    </div>
+                    <div class="col">
+                        <div class="jumbotron jumbotron_suffix_inner bg-secondary">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <div class="custom-control custom-radio">
+                                            <input class="custom-control-input" id="radio_user" type="radio" name="req_type" value="users">
+                                            <label class="custom-control-label" for="radio_user">Users :</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <select class="form-control custom-select" name="user_id" id="user_id">
+                                    {% for id in users %}
+                                        <option value="{{ id }}">{{ id }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="jumbotron jumbotron_suffix_inner bg-secondary">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <div class="custom-control custom-radio">
+                                            <input class="custom-control-input" id="radio_hostel" type="radio" name="req_type" value="hostels">
+                                            <label class="custom-control-label" for="radio_hostel">Hostels :</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <select class="form-control custom-select" name="hostel_id" id="hostel_id">
+                                    {% for id in hostels %}
+                                        <option value="{{ id }}">{{ id }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="jumbotron jumbotron_suffix_inner bg-secondary">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <div class="custom-control custom-radio">
+                                            <input class="custom-control-input" id="radio_ads" type="radio" name="req_type" value="ads">
+                                            <label class="custom-control-label" for="radio_ads">Advertisements :</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <select class="form-control custom-select" name="ads_id" id="ads_id">
+                                    {% for id in ads %}
+                                        <option value="{{ id }}">{{ id }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <input class="btn btn-outline-success btn-block" type="submit" value="Load">
+                    </div>
+                    <div class="col-2">
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    {% endblock %}

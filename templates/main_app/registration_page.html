@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/registration_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/registration_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Registration</h1>
+            </div>
+        </div>
+
+        <div class="accordion" id="registration_form">
+            <p>
+                <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active">
+                        <input id="student_registration" type="radio" data-toggle="collapse" data-target="#student_registration_form" aria-expanded="true" aria-controls="student_registration_form" checked>
+                        <span class="text-light"><b>Register as Student</b></span>
+                    </label>
+
+                    <label class="btn btn-outline-secondary active">
+                        <input id="hostel_owner_registration" type="radio" data-toggle="collapse" data-target="#hostel_owner_registration_form" aria-expanded="true" aria-controls="hostel_owner_registration_form">
+                        <span class="text-light"><b>Register as Hostel Owner</b></span>
+                    </label>
+                </div>
+            </p>
+
+            <div class="jumbotron jumbotron_suffix bg-dark">
+                <div class="collapse show" id="student_registration_form" data-parent="#registration_form">
+                    <form class="form-group" action="{% url 'main_app:student_registration' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <p>
+                             <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Name:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="text" name="s_name" placeholder="name" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Birth date:</b></span>
+                                        </div>
+                                        <input class="form-control dob bg-dark text-light border border-info" id="s_dob" type="date" name="s_dob">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Gender:</b></span>
+                                        </div>
+                                        <select class="form-control custom-select bg-dark text-light border border-info" name="s_gender" required>
+                                            <option value="male" selected>Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Username:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="text" name="s_username" placeholder="username" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Password:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="password" name="s_password" placeholder="password" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Retype password:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="password" name="s_retype_password" placeholder="retype password" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Phone:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="text" name="s_phone_number" placeholder="phone" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-dark text-info border border-info"><b>Email:</b></span>
+                                        </div>
+                                        <input class="form-control bg-dark text-light border border-info" type="email" name="s_email" placeholder="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+
+                        <br>
+
+                        <p>
+                            <label class="text-info" for="s_permanent_address"><b>Permanent address:</b></label>
+                            <textarea class="form-control bg-dark text-light border border-info" id="s_permanent_address" name="s_permanent_address" rows="2" placeholder="write your permanent address ..." required></textarea>
+                        </p>
+
+                        <br>
+
+                        <p>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-dark text-info border border-info"><b>Select you institute:</b></span>
+                            </div>
+                            <select class="custom-select bg-dark text-light border border-info" name="institution" id="institution">
+                                {% for institution in institutions %}
+                                    <option value="{{ institution }}">{{ institution }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <p>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-dark text-info border border-info"><b>Degree/Level:</b></span>
+                                    </div>
+                                    <input class="form-control bg-dark text-light border border-info" type="text" name="degree" placeholder="degree/level" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-dark text-info border border-info"><b>Student ID:</b></span>
+                                    </div>
+                                    <input class="form-control bg-dark text-white border border-info" type="text" name="student_id" placeholder="student id" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-dark text-info border border-info"><b>Profile picture:</b></span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="s_profile_picture" type="file" name="s_profile_picture" required>
+                                    <label class="custom-file-label bg-dark text-info border border-info" for="s_profile_picture">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                             <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-dark text-info border border-info"><b>Clear image of the front of your NID:</b></span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="s_nid" type="file" name="s_nid">
+                                    <label class="custom-file-label bg-dark text-info border border-info" for="s_nid">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                             <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-dark text-info border border-info"><b>Clear image of your Birth certificate:</b></span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="s_birth_certificate" type="file" name="s_birth_certificate">
+                                    <label class="custom-file-label bg-dark text-info border border-info" for="s_birth_certificate">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <br>
+
+                        <input class="form-control btn btn-outline-success" type="submit" value="Submit">
+
+                    </form>
+                </div>
+                <div class="collapse" id="hostel_owner_registration_form" data-parent="#registration_form">
+                    <form class="form-group" action="{% url 'main_app:hostel_owner_registration' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <p>
+                             <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="h_name" placeholder="Name" required>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Birth date:</span>
+                                        </div>
+                                        <input class="form-control dob" id="dob_hostel_owner" type="date" name="h_dob">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <select class="form-control custom-select" name="h_gender" required>
+                                        <option value="male" selected>Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="h_username" placeholder="Username" required>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="password" name="h_password" placeholder="Password" required>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="password" name="h_retype_password" placeholder="Retype password" required>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" type="text" name="occupation" placeholder="Occupation">
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="text" name="h_phone_number" placeholder="Phone" required>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="email" name="h_email" placeholder="Email" required>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <textarea class="form-control" id="permanent_address" name="h_permanent_address" rows="2" placeholder="write your permanent address ..." required></textarea>
+                        </p>
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Profile picture</span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="h_profile_picture" type="file" name="h_profile_picture" required>
+                                    <label class="custom-file-label bg_custom" for="h_profile_picture">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Clear image of the front of your NID</span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="h_nid" type="file" name="h_nid" required>
+                                    <label class="custom-file-label bg_custom" for="h_nid">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <p>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Clear image of your Birth certificate</span>
+                                </div>
+
+                                <div class="custom-file">
+                                    <input class="custom-file-input" id="h_birth_certificate" type="file" name="h_birth_certificate" required>
+                                    <label class="custom-file-label bg_custom" for="h_birth_certificate">Choose file</label>
+                                </div>
+                            </div>
+                        </p>
+
+                        <br>
+
+                        <input class="form-control btn btn-outline-success" type="submit" value="Submit">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

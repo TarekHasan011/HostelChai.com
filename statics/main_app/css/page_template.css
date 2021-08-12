@@ -1,0 +1,89 @@
+body {
+    background-color: #000000;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #1f252b;
+    /*background-color: transparent;*/
+    backdrop-filter: blur(30px);
+    color: #24eff6;
+}
+
+.navbar-brand {
+    color: #24eff6;
+}
+
+.navbar-brand:hover {
+    color: #24eff6;
+    text-shadow: 0 0 2px lime;
+}
+
+a:hover, a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #22bac1;
+}
+
+a.nav-link:hover {
+    color: #2af8ff;
+    text-shadow: 0 0 3px #2af8ff;
+}
+
+.header_layer_1 {
+    border: 0;
+    margin: 0;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.header_layer_2 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 4px solid #24eff6;
+    border-bottom: 4px solid #24eff6;
+    border-radius: 0px;
+}
+
+.header{
+    font-size: 3.5rem;
+}
+
+.jumbotron_suffix{
+    padding-top: 32px;
+    padding-bottom: 16px;
+}
+
+.jumbotron_suffix_unified{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.jumbotron_suffix_inner{
+    padding: 16px;
+    padding-bottom: 16px;
+}
+
+.form-control:focus {
+    background-color: #09181d;
+    caret-color: #24eff6;
+    color: #24eff6;
+    box-shadow: 0 0 5px #24eff6;
+}
+.form-control:hover {
+    background-color: #343a40;
+}
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #343a40 inset !important;
+}
+
+.form-control:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 30px #343a40 inset !important;
+}
+
+.form-control:-webkit-autofill {
+    -webkit-text-fill-color: #f8f9fa !important;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "main_app/css/page_template.css" %}">
+        {% block my_stylesheet %}{% endblock %}
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'main_app:landing_page' %}"><b>HOSTEL CHAI ?</b></a>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'main_app:ads_feed_page' page_number=1 location='Any' institute='Any' budget_from='0' budget_to='inf' %}">Feed</a></li>
+
+                    {% if user_type == 'H' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main_app:add_hostel_page' %}">Add Hostel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main_app:ad_posting_page' %}">Post ad.</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Manage ads.</a></li>
+                    {% elif user_type == 'S' %}
+{#                        <li class="nav-item"><a class="nav-link" href="#">Find a Hostel</a></li>#}
+                    {% elif user_type == 'A' %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main_app:requests_loader_page' %}">Approval requests</a></li>
+                    {% endif %}
+
+{#                    <li class="nav-item"><a class="nav-link" href="{% url 'main_app:test_page' %}">Test Page</a></li>#}
+                </ul>
+
+                <ul class="navbar-nav justify-content-end">
+                    {% if login_status == "true" %}
+                        <li class="nav-item">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info text-dark"><b>{{ name }}</b></button>
+                                <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    {% if user_type == 'A' %}
+                                        <a class="dropdown-item" href="{% url 'main_app:profile_page' user=9 user_id=user_id %}">Profile</a>
+                                    {% elif user_type == 'S' %}
+                                        <a class="dropdown-item" href="{% url 'main_app:profile_page' user=0 user_id=user_id %}">Profile</a>
+                                    {% elif user_type == 'H' %}
+                                        <a class="dropdown-item" href="{% url 'main_app:profile_page' user=1 user_id=user_id %}">Profile</a>
+                                    {% endif %}
+                                    <div class="dropdown-divider bg-secondary"></div>
+                                    {% if user_type == 'A' %}
+                                        <a class="dropdown-item" href="{% url 'main_app:complaint_checker_page' %}">Check complaints</a>
+                                    {% else %}
+                                        <a class="dropdown-item" href="{% url 'main_app:complaint_box_page' %}">Complaint box</a>
+                                    {% endif %}
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'main_app:logout' %}">Logout</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main_app:registration_page' %}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main_app:login_page' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <style>._nav_setup{margin-bottom: 58px}</style>
+        <div class="_nav_setup"></div>
+
+        <div class="container" id="title">
+            {% block main_block %}{% endblock %}
+        </div>
+
+        <script src="{% static "jquery/jquery-3.5.1.min.js" %}"></script>
+        <script src="{% static "bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+        <script src="{% static 'main_app/js/page_template.js' %}"></script>
+        {% block my_js %}{% endblock %}
+    </body>
+</html>

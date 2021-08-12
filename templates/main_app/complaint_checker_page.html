@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/complaint_checker_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/complaint_checker_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                {% if loaded_complaint_id == 'null' or all_resolved == 'true' %}
+                    <h1 class="text-center text-info header">Check complaints</h1>
+                {% else %}
+                    <h1 class="text-center text-info header">Complaint ID: {{ loaded_complaint_id }}</h1>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if all_resolved == 'true' %}
+            <div class="jumbotron jumbotron_suffix bg-dark">
+                <h1 class="text-center text-secondary">No complaints to resolve.</h1>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        <select class="custom-select bg-secondary text-light border border-info" id="complaint_id" name="complaint_id">
+                            {% for complaint in complaints %}
+                                <option value={% url 'main_app:complaint_checker_page' complaint_id=complaint.0 %}>{{ complaint.0 }} {{ complaint.1 }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="input-group-append">
+                            <a class="btn btn-outline-info" id="load" href="#">Load</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <a class="btn btn-outline-success btn-block" href="{% url 'main_app:resolve_complaint' complaint_id=loaded_complaint_id %}">Mark current complaint as resolved</a>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="jumbotron jumbotron_suffix bg-dark">
+
+                {% if loaded_complaint_id == 'null' %}
+                    <h1 class="text-center text-secondary">Please load to check complaints</h1>
+                {% else %}
+
+                    <div class="jumbotron jumbotron_suffix_unified bg-secondary">
+                        <div class="row">
+                            <div class="col"><h3 class="text-dark">User: {{ loaded_user_id_name }}</h3></div>
+                            <div class="col"><h3 class="text-dark">Contact: {{ loaded_user_contact.0 }}</h3></div>
+                        </div>
+                    </div>
+
+                    <div class="jumbotron jumbotron_suffix_unified bg-secondary text-dark">
+                        <div class="row">
+                            <div class="col-2"><h3 class="text-dark">Subject</h3></div>
+                            <div class="col"><h3 class="text-dark">: {{ loaded_complaint_subject }}</h3></div>
+                        </div>
+
+                        <p>
+
+                        <div class="row">
+                            <div class="col-2"><h3 class="text-dark">Details</h3></div>
+                            <div class="col"><h3 class="text-dark">: {{ loaded_complaint_description }}</h3></div>
+                        </div>
+                    </div>
+
+                    <p>
+
+                    <h4 class="text-center text-secondary"><b>**ATTACHMENTS**</b></h4>
+
+                    <p>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="card bg-secondary">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="text-dark"><b>Toggle View</b></span>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <img class="card-img" src="{{ MEDIA_URL }}{{ loaded_complaint_attachment }}" alt="Not found !!!">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endblock %}

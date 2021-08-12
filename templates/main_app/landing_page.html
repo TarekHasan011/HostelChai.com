@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/landing_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/landing_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header"><span id="brand">HOSTEL CHAI ?</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <br>
+                <div class="jumbotron jumbotron_suffix text-info bg-dark">
+                    <h2 class="text-center">Need a Hostel?</h2>
+                    <br>
+                    <p class="text-center">
+                        Find authentic hostels in your desired location with proper description (e.g. room details, cost, meal, facilities etc). Choose a hostel and get the owners contact information. Rate and review the hostels in different criteria.
+                    </p>
+
+                    <form class="form-group" action="#" method="post">
+                        {% csrf_token %}
+
+                        <br>
+                        <div class="input-group">
+                            <select class="custom-select bg-transparent border border-info text-info" name="location" id="location">
+                                {% for thana in thanas %}
+                                    <option class="bg-dark" value="{{ thana }}">{{ thana }}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="input-group-append">
+                                <input class="btn btn-outline-info" type="submit" value="Find">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <br>
+                <div class="jumbotron jumbotron_suffix_unified text-info bg-dark">
+                    <h2 class="text-center">Want to rent your hostel?</h2>
+                    <br>
+                    <p class="text-center">
+                        Find student tenants of different schools, colleges or universities. Set your institutional preferences. Post the full description (e.g. room details, cost, meal, facilities etc). Get rating and review from your hostel tenants.
+                    </p>
+                    <br>
+                    <a class="btn btn-outline-info btn-block" href="{% url 'main_app:registration_page' %}">Register to Post</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="jumbotron bg-dark">
+            <h2 class="text-center text-info">New to this website ?</h2>
+            <p>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <a class="btn btn-outline-info btn-block" href="{% url 'main_app:registration_page' %}">Register</a>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+            </p>
+        </div>
+
+    {% endblock %}

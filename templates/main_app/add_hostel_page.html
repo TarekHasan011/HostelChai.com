@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/add_hostel_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "main_app/js/add_hostel_page.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Add a Hostel</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix bg-dark">
+            <form class="form-group" action="{% url 'main_app:add_hostel' %}" method='post' enctype='multipart/form-data'>
+                {% csrf_token %}
+
+                <p>
+                    <input class="form-control" type="text" name="name" placeholder="Hostel Name" required>
+                </p>
+
+                <p>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Select Thana</span>
+                        </div>
+
+                         <select class="form-control" name="thana" id="" required>
+                            {% for thana in thanas %}
+                                <option value="{{ thana }}">{{ thana }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </p>
+
+                <p>
+                    <div class="row">
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" required>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="house_no" placeholder="House No." required>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="road_no" placeholder="Road No.">
+                        </div>
+                    </div>
+                </p>
+
+                <br>
+
+                <p>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Photo of your last month's electricity bill</span>
+                        </div>
+
+                        <div class="custom-file">
+                            <input class="custom-file-input" id="electricity_bill" type="file" name="electricity_bill" required>
+                            <label class="custom-file-label bg_custom" for="electricity_bill">Choose file</label>
+                        </div>
+                    </div>
+                </p>
+
+                <p>
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Photo of such document that confirms your authenticity</span>
+                        </div>
+
+                        <div class="custom-file">
+                            <input class="custom-file-input" id="other_valid_doc" type="file" name="other_valid_doc" required>
+                            <label class="custom-file-label bg_custom" for="other_valid_doc">Choose file</label>
+                        </div>
+                    </div>
+                </p>
+
+                <p>
+                     <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Clear image of your hostel</span>
+                        </div>
+
+                        <div class="custom-file">
+                            <input class="custom-file-input" id="image" type="file" name="image" required>
+                            <label class="custom-file-label bg_custom" for="electricity_bill">Choose file</label>
+                        </div>
+                    </div>
+                </p>
+
+                <br>
+
+                <input class="btn btn-outline-success btn-block" type="submit" value="Submit">
+
+            </form>
+        </div>
+
+    {% endblock %}

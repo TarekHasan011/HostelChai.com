@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "main_app/page_template.html" %}
+
+    {% load static %}
+
+    {% block title %}
+        Hostel Chai ?
+    {% endblock %}
+
+    {% block my_stylesheet %}
+        <link rel="stylesheet" href="{% static "main_app/stylesheets/complaint_box_page.css" %}">
+    {% endblock %}
+
+    {% block my_js %}
+        <script src="{% static "complaint_box_page/js/file_name.js" %}"></script>
+    {% endblock %}
+
+    {% block main_block %}
+
+        <div class="jumbotron header_layer_1 bg-transparent">
+            <div class="jumbotron header_layer_2 bg-transparent">
+                <h1 class="text-info text-center header">Complaint Box</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron_suffix bg-dark">
+            <form class="form-group" action="{% url 'main_app:complaint_box' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <p>
+                    <input class="form-control" type="text" name="subject" placeholder="Subject" required>
+                </p>
+
+                <p>
+                    <textarea class="form-control" id="details" name="details" placeholder="Write details here ..." rows="3" required></textarea>
+                </p>
+
+                <p>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Attachment[as image]</span>
+                        </div>
+
+                        <div class="custom-file">
+                            <input class="custom-file-input" id="photo" type="file" name="photo">
+                            <label class="custom-file-label bg_custom" for="photo">Choose file</label>
+                        </div>
+                    </div>
+                </p>
+
+                <br>
+
+                <input class="btn btn-outline-danger btn-block" type="submit" value="Submit">
+
+            </form>
+        </div>
+
+    {% endblock %}
